@@ -1,0 +1,18 @@
+# Arquivos de Configuração e Senhas
+/config/database.php
+*.env
+*.ini
+
+# Logs de Erro do PHP
+*.log
+error_log
+php_errors.log
+
+# Pastas de IDEs e Editores
+.vscode/
+.idea/
+*.suo
+
+# Arquivos Temporários de SO
+.DS_Store
+Thumbs.db
