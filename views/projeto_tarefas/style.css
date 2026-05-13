@@ -1,0 +1,136 @@
+/* Variáveis globais - Requisito da Demanda 2 */
+:root {
+    --cor-primaria: #333;
+    --cor-secundaria: #4a90e2;
+    --cor-fundo: #f4f4f4;
+    --cor-borda: #ddd;
+    --cor-texto: #333;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--cor-fundo);
+    display: grid; /* Requisito: CSS Grid para layout macro */
+    grid-template-areas: 
+        "header header"
+        "menu conteudo";
+    grid-template-columns: 240px 1fr;
+    grid-template-rows: 60px 1fr;
+    min-height: 100vh;
+}
+
+/* Header Semântico */
+header {
+    grid-area: header;
+    background-color: var(--cor-primaria);
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+/* Sidebar */
+nav {
+    grid-area: menu;
+    background-color: #fff;
+    border-right: 1px solid var(--cor-borda);
+    padding: 20px 0;
+}
+
+nav ul { list-style: none; }
+nav ul li a {
+    display: block;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: var(--cor-texto);
+}
+
+/* Área de Conteúdo */
+main {
+    grid-area: conteudo;
+    padding: 20px;
+}
+
+/* Flexbox para os Cards - Requisito da Demanda 2 */
+.lista-tarefas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card-tarefa {
+    background: white;
+    padding: 20px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 5px;
+    flex: 1 1 300px; /* Flexbox */
+}
+
+/* Linha do Tempo de Comentários - Requisito da Demanda 3 */
+.linha-tempo {
+    border-left: 2px solid var(--cor-secundaria);
+    margin-top: 20px;
+    padding-left: 15px;
+}
+
+.item-comentario {
+    background: #fff;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid var(--cor-borda);
+}
+
+.mensagem-sistema {
+    font-style: italic;
+    color: #777;
+    font-size: 0.9em;
+}
+
+/* Estilos exclusivos para a tela de login */
+.tela-login {
+    display: flex; /* Flexbox para centralizar tudo */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--cor-fundo);
+    grid-template-areas: none; /* Remove o Grid da página principal nesta tela */
+    display: flex !important; 
+}
+
+.container-login {
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 350px;
+    border: 1px solid var(--cor-borda);
+}
+
+.campo-login {
+    margin-bottom: 15px;
+}
+
+.campo-login label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.campo-login input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 4px;
+}
+
+.btn-acessar {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--cor-secundaria);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
